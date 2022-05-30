@@ -1,0 +1,8 @@
+.grid-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px 20px
+}
+.product-block{
+    margin-bottom: 70px;
+}

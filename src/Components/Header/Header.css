@@ -1,0 +1,45 @@
+.container{
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.header-logo-flex{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-title{
+    color: transparent;
+    user-select: none;
+    background-image: url('../../../public/img/Dodo_header/Group 35.svg') ;
+    background-image: cover;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 48px;
+}
+
+.header-phone-flex{
+    
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header-phone-flex h2{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25.56px;
+    font-family: Nunito;
+
+
+}
+
+.header-phone-flex p{
+    color:#999999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.46px;  
+
+
+}

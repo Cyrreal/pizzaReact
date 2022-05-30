@@ -1,0 +1,22 @@
+.navigation-container{
+    margin-top: 31px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-flex{
+    display: flex;
+    gap:23px;
+    list-style: none;
+}
+
+.link{
+    background-color: #fff;
+    border:none;
+    cursor: pointer;
+}
+
+.link:hover{
+    transition: 0.3s;
+    color:#F96900;
+}

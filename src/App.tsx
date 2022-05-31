@@ -3,6 +3,7 @@ import { Header } from "./Components/Header/Header";
 import { Main, Navigation } from "./Components/MainComps";
 import { useEffect, useState } from "react";
 import { Footer } from "./Components/Footer";
+import { Popup } from "./Components/Popup";
 
 export function App() {
   const [dishes, setDishes] = useState([]);
@@ -21,7 +22,7 @@ export function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header />
       <Navigation />
       {loading === false ? (
         <Main
@@ -33,7 +34,8 @@ export function App() {
       ) : (
         <div>Lodaing</div>
       )}
-      <Footer />
+      <Footer /> */}
+      <Popup />
     </>
   );
 }

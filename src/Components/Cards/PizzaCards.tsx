@@ -1,8 +1,5 @@
 type PropsType = {
   pizzas: any;
-  snacks: any;
-  desserts: any;
-  drinks: any;
 };
 
 export function PizzaCards({ pizzas }: PropsType) {

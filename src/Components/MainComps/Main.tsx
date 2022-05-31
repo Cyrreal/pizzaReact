@@ -1,5 +1,5 @@
 import { Pizza, Deserts, Drinks, Snacks } from "../MenueComps";
-type PropsType = {
+export type PropsType = {
   pizzas: any;
   snacks: any;
   desserts: any;

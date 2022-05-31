@@ -1,5 +1,8 @@
 import { PizzaCards } from "../Cards";
 
+type Props = {
+  pizzas: any;
+};
 export function Pizza({ pizzas }) {
   return (
     <div className="product-block">

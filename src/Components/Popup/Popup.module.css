@@ -8,21 +8,45 @@
   right: 0;
   bottom: 0;
 }
+
+.close {
+  position: absolute;
+  left: 88%;
+  top: 12%;
+  color: #fff;
+}
+
 .body {
   /* position: relative; */
-
-  margin: 0 auto;
+  position: relative;
+  top: 15%;
+  left: 15%;
   width: 920px;
-  height: 610px;
+  max-height: 610px;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  padding: 13px 51px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  border: none;
+  color: #fff;
+  background: #f47700;
+  border-radius: 1000px;
 }
 
 .content {
-  padding: 30px;
+  border-radius: 20px;
   display: flex;
   background-color: #fff;
 }
 
 .background {
+  margin: 76px 44px 76px 38px;
   display: flex;
   align-items: center;
   background-image: url("../../../public/img/Ellipse 6.svg");
@@ -40,29 +64,105 @@
 }
 
 .description {
+  padding: 30px 30px 30px 0;
+  max-height: 610px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.btnBackground {
+.description::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.size {
+  margin-bottom: 14px;
   border-radius: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: #f3f3f7;
+  width: 320px;
+  height: 32px;
+}
+
+.dough {
+  margin-bottom: 22px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: #f3f3f7;
   width: 320px;
   height: 32px;
 }
 
 .selector {
-  width: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 102px;
   height: 28px;
 }
 
 .selector2 {
-  width: 157px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 154px;
   height: 28px;
 }
 .selected {
-  background-color: #fff;
+  background: #ffffff;
+  box-shadow: 0px 3px 15px rgba(6, 5, 50, 0.05);
+  border-radius: 100px;
+}
+
+.grid {
+  margin-top: 11px;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+}
+
+.card {
+  border: 1px solid #000;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardImg {
+  display: block;
+  width: 84px;
+  height: 84px;
+}
+.cardTitle {
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+/*Стили для попапа напитков,снеков, и прочего*/
+
+.container {
+  width: 720px;
+  height: 389px;
+}
+
+.leftSide {
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,10 +1,12 @@
+import { Popup } from "../Popup";
+
 type PropsType = {
   pizzas: any;
+  setThisPizza: (arg: any) => void;
 };
 
-export function PizzaCards({ pizzas }: PropsType) {
-  const { description, name, products } = pizzas;
-  console.log(pizzas);
+export function PizzaCards({ pizzas, setThisPizza }: PropsType) {
+  const { description, name, products, productTopings } = pizzas;
   const price = products[0].menuProduct.price.value;
   const image = products[0].menuProduct.product.productImages[5].url;
   const imgLink =
@@ -13,14 +15,19 @@ export function PizzaCards({ pizzas }: PropsType) {
 
   return (
     <div className="grid-item">
-      <div>
-        <img src={imgLink} className="image" />
-      </div>
+      <img src={imgLink} className="image" />
       <p className="card-title">{name}</p>
       <p className="card-description">{description}</p>
       <div className="price-flex">
         <p className="price">{price}P</p>
-        <button className="btn-price">Выбрать</button>
+        <button
+          className="btn-price"
+          onClick={() => {
+            setThisPizza(pizzas);
+          }}
+        >
+          Выбрать
+        </button>
       </div>
     </div>
   );

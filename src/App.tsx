@@ -1,20 +1,14 @@
 import "./App.css";
+import Loader from "./DgiN.gif";
 import { Header } from "./Components/Header/Header";
 import { Main, Navigation } from "./Components/MainComps";
 import { useEffect, useState } from "react";
 import { Footer } from "./Components/Footer";
 import { Popup, PopupOther } from "./Components/Popup";
 
-// export type Props = {
-//   setThisPizza: ()=>void
-//   pizzas:any
-// };
-
 export function App() {
-  const [thisPizza, setThisPizza] = useState();
+  const [thisPizza, setThisPizza] = useState("");
   const [otherEats, setOtherEats] = useState();
-  console.log(otherEats);
-  // const [isPopupVisible, setPopupVisible] = useState(false);
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +23,7 @@ export function App() {
   }, []);
 
   const { pizzas, snacks, desserts, drinks } = dishes as any;
-  console.log(snacks);
+
   return (
     <>
       <Header />
@@ -37,20 +31,20 @@ export function App() {
       {loading === false ? (
         <Main
           pizzas={pizzas}
-          // isPopupVisible={isPopupVisible}
-          // setPopupVisible={setPopupVisible}
-          setThisPizza={setThisPizza}
+          onPizzaClick={setThisPizza}
+          onOtherClick={setOtherEats}
           snacks={snacks}
           desserts={desserts}
           drinks={drinks}
-          setOtherEats={setOtherEats}
         />
       ) : (
-        <div>Lodaing</div>
+        <div className="loader">
+          <img src={Loader} />
+        </div>
       )}
       <Footer />
-      {thisPizza && <Popup setThisPizza={setThisPizza} pizzas={thisPizza} />}
-      {otherEats && <PopupOther setOtherEats={setOtherEats} eats={otherEats} />}
+      {thisPizza && <Popup onClick={setThisPizza} pizzas={thisPizza} />}
+      {otherEats && <PopupOther onClick={setOtherEats} eats={otherEats} />}
     </>
   );
 }

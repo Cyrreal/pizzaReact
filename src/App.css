@@ -1,32 +1,36 @@
-@import './Components/Header/Header.css';
-@import './Components/MainComps/Navigation.css';
-@import './Components/MainComps/Slider.css';
-@import './Components/MenueComps/MenueComps.css';
-@import './Components/Cards/Cards.css';
-@import './Components/Footer/Footer.css';
+@import "./Components/Header/Header.css";
+@import "./Components/MainComps/Navigation.css";
+@import "./Components/MainComps/Slider.css";
+@import "./Components/MenueComps/MenueComps.css";
+@import "./Components/Cards/Cards.css";
+@import "./Components/Footer/Footer.css";
 
-
-*{
+* {
   box-sizing: border-box;
   margin: 0;
-  padding:0;
-  font-family: "Nunito",sans-serif;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
 }
 
-.btn{
+.btn {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
   width: 104px;
   height: 40px;
-  color:#fff;
-  background-color: #F96900;
+  color: #fff;
+  background-color: #f96900;
   border: none;
   border-radius: 1000px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-footer{
-  background-color:
-  #464C55;
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 774px;
+}
+
+footer {
+  background-color: #464c55;
 }

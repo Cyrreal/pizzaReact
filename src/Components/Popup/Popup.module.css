@@ -9,23 +9,23 @@
   bottom: 0;
 }
 
-.close {
-  position: absolute;
-  left: 88%;
-  top: 12%;
-  color: #fff;
-}
-
 .body {
-  /* position: relative; */
   position: relative;
   top: 15%;
   left: 15%;
   width: 920px;
   max-height: 610px;
 }
+.close {
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  color: #fff;
+  cursor: pointer;
+}
 
 .button {
+  width: 320px;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
@@ -42,6 +42,7 @@
 .content {
   border-radius: 20px;
   display: flex;
+  justify-content: space-between;
   background-color: #fff;
 }
 
@@ -64,8 +65,10 @@
 }
 
 .description {
-  padding: 30px 30px 30px 0;
-  max-height: 610px;
+  padding-bottom: 60px;
+  margin: 30px;
+
+  max-height: 561px;
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -88,6 +91,7 @@
   background-color: #f3f3f7;
   width: 320px;
   height: 32px;
+  cursor: pointer;
 }
 
 .dough {
@@ -99,6 +103,7 @@
   background-color: #f3f3f7;
   width: 320px;
   height: 32px;
+  cursor: pointer;
 }
 
 .selector {
@@ -107,6 +112,24 @@
   align-items: center;
   text-align: center;
   width: 102px;
+  height: 28px;
+}
+
+.slimDoughSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 156px;
+  height: 28px;
+}
+
+.smallSizeSelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 316px;
   height: 28px;
 }
 
@@ -133,12 +156,24 @@
 
 .card {
   border: 1px solid #000;
+  height: 150px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 20px rgba(6, 5, 50, 0.05);
 }
+.checked {
+  display: none;
+}
+
+.checked:checked ~ .card {
+  border: 1px solid #f47700;
+  border-radius: 12px;
+}
+
 .cardImg {
   display: block;
   width: 84px;
@@ -146,23 +181,15 @@
 }
 .cardTitle {
   margin-top: auto;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0em;
   text-align: center;
 }
-/*Стили для попапа напитков,снеков, и прочего*/
 
-.container {
-  width: 720px;
-  height: 389px;
-}
-
-.leftSide {
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
+.cardDescr {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
 }

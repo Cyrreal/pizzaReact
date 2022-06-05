@@ -5,8 +5,8 @@ export type PropsType = {
   snacks: any;
   desserts: any;
   drinks: any;
-  setThisPizza: (arg: any) => void;
-  setOtherEats: (arg: any) => void;
+  onOtherClick: (arg: any) => void;
+  onPizzaClick: (arg: any) => void;
 };
 
 export function Main({
@@ -14,15 +14,15 @@ export function Main({
   snacks,
   desserts,
   drinks,
-  setThisPizza,
-  setOtherEats,
+  onPizzaClick,
+  onOtherClick,
 }: PropsType) {
   return (
     <div className="container">
-      <Pizza pizzas={pizzas} setThisPizza={setThisPizza} />
-      <Snacks snacks={snacks} setOtherEats={setOtherEats} />
-      <Deserts desserts={desserts} setOtherEats={setOtherEats} />
-      <Drinks drinks={drinks} setOtherEats={setOtherEats} />
+      <Pizza data={pizzas} onClick={onPizzaClick} />
+      <Snacks data={snacks} onClick={onOtherClick} />
+      <Deserts data={desserts} onClick={onOtherClick} />
+      <Drinks data={drinks} onClick={onOtherClick} />
     </div>
   );
 }

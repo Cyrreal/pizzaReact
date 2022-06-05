@@ -1,20 +1,27 @@
-import { PizzaCards } from "../Cards";
+import { Card } from "../Cards";
 
 type Props = {
-  pizzas: any;
-  setThisPizza: (arg: any) => void;
+  data: any;
+  onClick: (arg: any) => void;
 };
-export function Pizza({ pizzas, setThisPizza }: Props) {
+export function Pizza({ data, onClick }: Props) {
   return (
     <div className="product-block">
       <h2 className="menu-title">Пицца</h2>
       <div className="grid-menu">
-        {pizzas.map((elem) => {
+        {data.map((elem) => {
           return (
-            <PizzaCards
-              setThisPizza={setThisPizza}
-              pizzas={elem}
+            <Card
+              name={elem.name}
+              description={elem.description}
+              imgLink={
+                "https://raw.githubusercontent.com/Saint-Code-Bootcamp/pizza-house/main/images/" +
+                `${elem.products[0].menuProduct.product.productImages[5].url}`
+              }
+              price={elem.products[0].menuProduct.price.value}
               key={elem.name}
+              onClick={onClick}
+              data={elem}
             />
           );
         })}

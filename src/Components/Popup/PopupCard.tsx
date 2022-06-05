@@ -3,49 +3,48 @@ import s from "./Popup.module.css";
 type Props = {
   elem: any;
   pathLink: string;
-  thiknes: string;
+  thiknes: number;
   size: string;
+  orderCostSum: (event: any) => void;
   choosed: any;
-  sizes: any[];
+  sizes: number;
 };
 export function PopupCard({
   elem,
   pathLink,
   thiknes,
   size,
+  orderCostSum,
   choosed,
-  sizes,
 }: Props) {
-  const small = sizes[0];
-  const medium = sizes[1];
-  const large = sizes[2];
-  console.log(small, medium, large);
+  const { variationPrices } = elem;
+  const filteredPrice = variationPrices.filter((item) => {
+    return item.sizeGroup === size && item.doughType === thiknes;
+  });
+  const price = filteredPrice[0].price;
+
   return (
-    <div className={s.card} key={elem.id}>
-      <img
-        className={s.cardImg}
-        src={pathLink + elem.menuImagePath}
-        alt={"topping"}
-      />
-      <h3 className={s.cardTitle}>{elem.name}</h3>
-      {thiknes === "slim" && size === small && (
-        <p className={s.cardPrice}>{elem.variationPrices[0].price}₽</p>
-      )}
-      {thiknes === "traditional" && size === small && (
-        <p className={s.cardPrice}>{elem.variationPrices[0].price}₽</p>
-      )}
-      {thiknes === "traditional" && size === medium && (
-        <p className={s.cardPrice}>{elem.variationPrices[1].price}₽</p>
-      )}
-      {thiknes === "traditional" && size === large && (
-        <p className={s.cardPrice}>{elem.variationPrices[2].price}₽</p>
-      )}
-      {thiknes === "slim" && size === medium && (
-        <p className={s.cardPrice}>{elem.variationPrices[3].price}₽</p>
-      )}
-      {thiknes === "slim" && size === large && (
-        <p className={s.cardPrice}>{elem.variationPrices[4].price}₽</p>
-      )}
-    </div>
+    <>
+      <label>
+        <input
+          className={s.checked}
+          type="checkBox"
+          id={elem.name}
+          name={elem.name}
+          value={price}
+          onChange={(event) => orderCostSum(event)}
+        />
+
+        <div className={s.card} key={elem.name}>
+          <img
+            className={s.cardImg}
+            src={pathLink + elem.menuImagePath}
+            alt={"topping"}
+          />
+          <h3 className={s.cardTitle}>{elem.name}</h3>
+          <p className={s.cardDescr}>{price}₽</p>
+        </div>
+      </label>
+    </>
   );
 }

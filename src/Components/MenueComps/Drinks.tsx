@@ -1,19 +1,30 @@
-import { OtherCards } from "../Cards";
+import { Card } from "../Cards";
 type PropsType = {
   pizzas: any;
   snacks: any;
   desserts: any;
   drinks: any;
-  setOtherEats: (arg: any) => void;
+  onClick: (arg: any) => void;
 };
-export function Drinks({ drinks, setOtherEats }) {
+export function Drinks({ data, onClick }) {
   return (
     <div className="product-block">
       <h2 className="menu-title">Напитки</h2>
       <div className="grid-menu">
-        {drinks.map((elem) => {
+        {data.map((elem) => {
           return (
-            <OtherCards {...elem} setOtherEats={setOtherEats} key={elem.name} />
+            <Card
+              data={elem}
+              name={elem.product.name}
+              description={elem.product.description}
+              imgLink={
+                "https://raw.githubusercontent.com/Saint-Code-Bootcamp/pizza-house/main/images/" +
+                `${elem.product.productImages[3].url}`
+              }
+              price={elem.price.value}
+              key={elem.name}
+              onClick={onClick}
+            />
           );
         })}
       </div>

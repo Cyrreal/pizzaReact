@@ -6,6 +6,7 @@ type Props = {
   thiknes: number;
   size: string;
   orderCostSum: (event: any) => void;
+  setChoosed: (event: any) => void;
   choosed: any;
   sizes: number;
 };
@@ -14,14 +15,23 @@ export function PopupCard({
   pathLink,
   thiknes,
   size,
-  orderCostSum,
   choosed,
+  orderCostSum,
+  setChoosed,
 }: Props) {
   const { variationPrices } = elem;
-  const filteredPrice = variationPrices.filter((item) => {
+  const filteredPrice = variationPrices.find((item) => {
     return item.sizeGroup === size && item.doughType === thiknes;
   });
-  const price = filteredPrice[0].price;
+  const price = filteredPrice.price;
+
+  const toppingsChekedPrice = (arg: boolean, name: string) => {
+    if (arg === true) {
+      setChoosed([...choosed, elem]);
+    } else {
+      setChoosed((prevState) => prevState.filter((el) => el.name !== name));
+    }
+  };
 
   return (
     <>
@@ -32,7 +42,9 @@ export function PopupCard({
           id={elem.name}
           name={elem.name}
           value={price}
-          onChange={(event) => orderCostSum(event)}
+          onChange={(event) =>
+            toppingsChekedPrice(event.target.checked, elem.name)
+          }
         />
 
         <div className={s.card} key={elem.name}>

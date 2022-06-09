@@ -5,6 +5,7 @@ import { Main, Navigation } from "./Components/MainComps";
 import { useEffect, useState } from "react";
 import { Footer } from "./Components/Footer";
 import { Popup, PopupOther } from "./Components/Popup";
+import { Route, Routes } from "react-router-dom";
 
 export function App() {
   const [thisPizza, setThisPizza] = useState("");
@@ -45,6 +46,10 @@ export function App() {
       <Footer />
       {thisPizza && <Popup onClick={setThisPizza} pizzas={thisPizza} />}
       {otherEats && <PopupOther onClick={setOtherEats} eats={otherEats} />}
+      <Routes>
+        <Route path="/"></Route>
+        <Route path="/bucket" />
+      </Routes>
     </>
   );
 }

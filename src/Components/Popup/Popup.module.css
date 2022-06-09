@@ -9,10 +9,17 @@
   bottom: 0;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 3%;
+}
+
 .body {
   position: relative;
-  top: 15%;
-  left: 15%;
+
   width: 920px;
   max-height: 610px;
 }
